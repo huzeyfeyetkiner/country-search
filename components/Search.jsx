@@ -1,11 +1,12 @@
 "use client"
 import React, { useState } from "react"
 
-function Search() {
+function Search({ setText }) {
 	const [searchText, setSearchText] = useState("")
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
+		setText(searchText)
 	}
 
 	return (
@@ -24,7 +25,7 @@ function Search() {
 					type="submit"
 					className="w-1/12 border border-black rounded-md shadow-sm shadow-slate-400 p-1 hover:bg-black hover:text-white transition-all duration-300 ease-in-out"
 				>
-					Ara
+					Search
 				</button>
 			</form>
 		</div>

@@ -16,7 +16,10 @@ function CountryList({ search = "" }) {
 	const { data, loading, error } = useQuery(
 		gql`
 			{
-				countries(filter: { name: { regex: "^${search}" } }) {
+				countries(filter: { name: { regex: "^${
+					search.slice(0, 1).toUpperCase() +
+					search.slice(1, search.length)
+				}" } }) {
 					code
 					name
 					currency
@@ -35,7 +38,7 @@ function CountryList({ search = "" }) {
 	}
 
 	return (
-		<div className="w-full flex flex-row flex-wrap justify-center gap-4">
+		<div className="w-full flex-1 flex flex-col flex-wrap items-center gap-4 mt-2">
 			{data.countries.map((country) => (
 				<CountryComp
 					key={country.code}

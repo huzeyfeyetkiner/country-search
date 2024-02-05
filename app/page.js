@@ -1,14 +1,15 @@
+"use client"
 import CountryList from "@/components/CountryList"
 import Search from "@/components/Search"
-import Image from "next/image"
-
-// write a GraphQL query that asks for names and codes for all countries
+import { useState } from "react"
 
 export default function Home() {
+	const [text, setText] = useState("")
+
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-between p-12">
-			<Search />
-			<CountryList />
+		<main className="flex flex-col items-center justify-between p-4">
+			<Search setText={setText} />
+			<CountryList search={text} />
 		</main>
 	)
 }
