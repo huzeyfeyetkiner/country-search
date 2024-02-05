@@ -51,7 +51,10 @@ function CountryList({ search = "" }) {
 				<CountryComp
 					key={country.code}
 					country={country}
-					onClick={() => setSelected(country.code)}
+					onClick={() => {
+						if (selected === country.code) setSelected("")
+						else setSelected(country.code)
+					}}
 					selected={selected === country.code}
 				/>
 			))}
