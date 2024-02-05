@@ -12,18 +12,18 @@ function Search({ setText }) {
 	return (
 		<div className="w-full flex-col justify-center items-center">
 			<form
-				className="w-full flex items-center justify-center gap-x-2"
+				className="w-full flex flex-wrap items-center justify-center gap-x-2"
 				onSubmit={handleSubmit}
 			>
 				<input
-					className="w-2/6 border border-black rounded-md shadow-sm shadow-slate-400 p-1 my-2 outline-none"
+					className="w-2/6 min-w-28 border border-black rounded-md shadow-sm shadow-slate-400 p-1 my-2 outline-none"
 					type="text"
 					value={searchText}
 					onChange={(e) => setSearchText(e.target.value)}
 				/>
 				<button
 					type="submit"
-					className="w-1/12 border border-black rounded-md shadow-sm shadow-slate-400 p-1 hover:bg-black hover:text-white transition-all duration-300 ease-in-out"
+					className="w-1/12 min-w-16 border border-black rounded-md shadow-sm shadow-slate-400 p-1 hover:bg-black hover:text-white transition-all duration-300 ease-in-out"
 				>
 					Search
 				</button>

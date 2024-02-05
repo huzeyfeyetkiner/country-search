@@ -5,7 +5,7 @@ function CountryComp({ country, onClick, selected, colorIndex }) {
 		<div
 			onClick={onClick}
 			key={country.code}
-			className={`flex items-center justify-between w-2/3 max-h-12 p-4 border border-gray-400 border-opacity-20 cursor-pointer rounded-md shadow-sm hover:shadow-lg transition-all duration-300 ease-in-out ${
+			className={`flex items-center justify-between w-2/3 min-w-72  p-4 border border-gray-400 border-opacity-20 cursor-pointer rounded-md shadow-sm hover:shadow-lg transition-all duration-300 ease-in-out ${
 				selected && `${selectedColors[colorIndex]} text-white`
 			}`}
 		>
