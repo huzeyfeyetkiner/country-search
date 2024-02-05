@@ -5,8 +5,8 @@ function CountryComp({ country, onClick, selected }) {
 		<div
 			onClick={onClick}
 			key={country.code}
-			className={`flex items-center justify-between w-full max-w-xl p-4 my-4 bg-white border border-gray-400 border-opacity-20 cursor-pointer rounded-md shadow-sm hover:shadow-lg transition-all duration-300 ease-in-out ${
-				selected ? "bg-slate-200" : ""
+			className={`flex items-center justify-between w-2/3 max-h-12 p-4 border border-gray-400 border-opacity-20 cursor-pointer rounded-md shadow-sm hover:shadow-lg transition-all duration-300 ease-in-out ${
+				selected ? "bg-slate-600 text-white" : ""
 			}`}
 		>
 			<div className="flex items-center">
