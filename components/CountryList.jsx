@@ -12,6 +12,7 @@ const client = new ApolloClient({
 
 function CountryList({ search = "" }) {
 	const [selected, setSelected] = useState("")
+	const [colorIndex, setColorIndex] = useState(0)
 
 	const { data, loading, error } = useQuery(
 		gql`
@@ -54,7 +55,11 @@ function CountryList({ search = "" }) {
 					onClick={() => {
 						if (selected === country.code) setSelected("")
 						else setSelected(country.code)
+
+						if (colorIndex < 5) setColorIndex(colorIndex + 1)
+						else setColorIndex(0)
 					}}
+					colorIndex={colorIndex}
 					selected={selected === country.code}
 				/>
 			))}

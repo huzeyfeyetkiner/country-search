@@ -1,12 +1,12 @@
-import React from "react"
+import React, { useState } from "react"
 
-function CountryComp({ country, onClick, selected }) {
+function CountryComp({ country, onClick, selected, colorIndex }) {
 	return (
 		<div
 			onClick={onClick}
 			key={country.code}
 			className={`flex items-center justify-between w-2/3 max-h-12 p-4 border border-gray-400 border-opacity-20 cursor-pointer rounded-md shadow-sm hover:shadow-lg transition-all duration-300 ease-in-out ${
-				selected ? "bg-slate-600 text-white" : ""
+				selected && `${selectedColors[colorIndex]} text-white`
 			}`}
 		>
 			<div className="flex items-center">
@@ -19,11 +19,11 @@ function CountryComp({ country, onClick, selected }) {
 
 export default CountryComp
 
-const selectedColors = {
-	gray: "bg-gray-500",
-	red: "bg-red-500",
-	yellow: "bg-yellow-500",
-	green: "bg-green-500",
-	blue: "bg-blue-500",
-	indigo: "bg-indigo-500",
-}
+const selectedColors = [
+	"bg-gray-500",
+	"bg-red-500",
+	"bg-yellow-500",
+	"bg-green-500",
+	"bg-blue-500",
+	"bg-indigo-500",
+]
