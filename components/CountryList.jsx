@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react"
 import { ApolloClient, InMemoryCache, gql, useQuery } from "@apollo/client"
 
 import CountryComp from "@/components/CountryComp"
+import { BeatLoader } from "react-spinners"
 
 const client = new ApolloClient({
 	cache: new InMemoryCache(),
@@ -38,10 +39,18 @@ function CountryList({ search = "" }) {
 		}
 	}, [loading, data])
 
+	// if (loading || error) {
+	// 	return (
+	// 		<div className="flex-1 mt-12">
+	// 			<p>{error ? error.message : "Loading..."}</p>
+	// 		</div>
+	// 	)
+	// }
+
 	if (loading || error) {
 		return (
-			<div className="flex-1 mt-12">
-				<p>{error ? error.message : "Loading..."}</p>
+			<div className="w-full flex justify-center items-center p-12 ">
+				{error ? <p>error.message</p> : <BeatLoader color="#000" />}
 			</div>
 		)
 	}

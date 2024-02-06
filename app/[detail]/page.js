@@ -1,6 +1,7 @@
 "use client"
 import React from "react"
 import { ApolloClient, InMemoryCache, gql, useQuery } from "@apollo/client"
+import BeatLoader from "react-spinners/BeatLoader"
 
 const client = new ApolloClient({
 	cache: new InMemoryCache(),
@@ -37,8 +38,8 @@ function Detail({ params: { detail } }) {
 
 	if (loading || error) {
 		return (
-			<div className="flex-1 p-12">
-				<p>{error ? error.message : "Loading..."}</p>
+			<div className="w-full flex justify-center items-center p-12 ">
+				{error ? <p>error.message</p> : <BeatLoader color="#808080" />}
 			</div>
 		)
 	}
