@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import Link from "next/link"
+import React from "react"
 
 function CountryComp({ country, onClick, selected, colorIndex }) {
 	return (
@@ -11,8 +12,13 @@ function CountryComp({ country, onClick, selected, colorIndex }) {
 		>
 			<div className="flex items-center">
 				<h2 className="ml-4 text-xl font-semibold">{country.name}</h2>
+				<span className="text-xs font-medium text-gray-500 ml-1">
+					({country.code})
+				</span>
 			</div>
-			<p className="text-xl">{country.code}</p>
+			<Link href={`/${country.code}`} className="text-xl p-1">
+				{"->"}
+			</Link>
 		</div>
 	)
 }

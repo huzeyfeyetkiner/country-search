@@ -16,14 +16,15 @@ function Search({ setText }) {
 				onSubmit={handleSubmit}
 			>
 				<input
-					className="w-2/6 min-w-28 border border-black rounded-md shadow-sm shadow-slate-400 p-1 my-2 outline-none"
+					className="w-2/6 min-w-28 border border-black rounded-md shadow-sm shadow-slate-400 py-1 px-2 my-2 outline-none"
 					type="text"
 					value={searchText}
 					onChange={(e) => setSearchText(e.target.value)}
+					placeholder="Search for a country..."
 				/>
 				<button
 					type="submit"
-					className="w-1/12 min-w-16 border border-black rounded-md shadow-sm shadow-slate-400 p-1 hover:bg-black hover:text-white transition-all duration-300 ease-in-out"
+					className="w-1/12 min-w-16 border border-black rounded-md shadow-sm shadow-slate-400 p-1 capitalize hover:bg-black hover:text-white transition-all duration-300 ease-in-out"
 				>
 					Search
 				</button>
